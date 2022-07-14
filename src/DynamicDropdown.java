@@ -15,6 +15,7 @@ public class DynamicDropdown {
 //		driver.findElement(By.xpath("//a[@value='MAA']")).click();
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("(//a[@value='BHO'])[2]")).click();
+		
 //		If someone don't like indexing approach then try Another way:
 		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR'] //a[@value='MAA']")).click(); // parent to child traversal
 		Thread.sleep(2000);
