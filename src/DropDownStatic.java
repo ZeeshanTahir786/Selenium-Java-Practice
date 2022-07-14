@@ -23,7 +23,6 @@ public class DropDownStatic {
 		System.out.println(select.getFirstSelectedOption().getText());
 		select.selectByValue("AED");
 		System.out.println(select.getFirstSelectedOption().getText());
-
 		
 		driver.close();
 	}

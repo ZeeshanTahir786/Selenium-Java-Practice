@@ -30,6 +30,11 @@ public class DynamicDropdown {
 		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR'] //a[@value='MAA']")).click(); // parent to child traversal
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='BHO']")).click();
+//		Thread.sleep(
+		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
+
+//		driver.findElement(By.xpath("//div[@id='ui-datepicker-div'] //a[@class='ui-state-default ui-state-highlight ui-state-active']")).click();
+
 		
 		driver.close();
 	}
