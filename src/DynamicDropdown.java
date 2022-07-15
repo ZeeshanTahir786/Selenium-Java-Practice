@@ -41,6 +41,14 @@ public class DynamicDropdown {
 			Assert.assertTrue(false);
 		}
 		
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("style").contains("1"));
+		if(driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
 		driver.close();
 	}
 
