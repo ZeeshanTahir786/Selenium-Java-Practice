@@ -19,6 +19,7 @@ public class DynamicDropdown {
 		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
 		Assert.assertEquals(driver.findElements(By.cssSelector("input[type='checkbox']")).size(), 6);
 		
+		
 		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
 //		driver.findElement(By.xpath("//a[@value='MAA']")).click();
 //		Thread.sleep(2000);
@@ -33,8 +34,12 @@ public class DynamicDropdown {
 //		Thread.sleep(
 		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
 
-//		driver.findElement(By.xpath("//div[@id='ui-datepicker-div'] //a[@class='ui-state-default ui-state-highlight ui-state-active']")).click();
-
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("style").contains("0.5"));
+		if(driver.findElement(By.id("Div1")).getAttribute("style").contains("0.5")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
 		
 		driver.close();
 	}

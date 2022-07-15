@@ -14,6 +14,7 @@ public class Locators {
 		String name = "Hafiz";
 		
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
+//		driver.navigate().to("https://rahulshettyacademy.com/locatorspractice/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 		driver.findElement(By.id("inputUsername")).sendKeys(name);
