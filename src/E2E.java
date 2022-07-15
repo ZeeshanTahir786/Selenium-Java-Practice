@@ -10,7 +10,7 @@ public class E2E {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "/Users/hafizzeeshan/Downloads/chromedriver");
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise");
 		
