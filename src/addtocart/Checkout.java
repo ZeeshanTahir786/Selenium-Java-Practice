@@ -12,8 +12,7 @@ public class Checkout {
 		String[] itemsNeeded = { "Cucumber", "Beetroot", "Onion", "Mango" };
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise");
-		
-		
+
 	}
 
 }
