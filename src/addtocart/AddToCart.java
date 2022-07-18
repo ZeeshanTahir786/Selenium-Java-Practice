@@ -1,5 +1,7 @@
 package addtocart;
 
+import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -12,22 +14,41 @@ public class AddToCart {
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "/Users/hafizzeeshan/Downloads/chromedriver");
 		WebDriver driver = new ChromeDriver();
-		
-		String[] itemsNeeded = {"Cucumber","Beetroot"};
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
+		String[] itemsNeeded = { "Cucumber", "Beetroot", "Onion", "Mango" };
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise");
 		
+		addItem(driver,itemsNeeded);
+		driver.findElement(By.cssSelector("img[alt='Cart']")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+		driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.cssSelector("button.promoBtn")).click();
+		System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
+	}
+
+	public static void addItem(WebDriver driver, String[] itemsNeeded) {
 		List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
-		
+		int j = 0;
+
 		for (int i = 0; i < products.size(); i++) {
-			String name = products.get(i).getText();
-			if(name.contains("Cucumber")) {
-				driver.findElement(By.xpath("//button[text()='ADD TO CART']")).click();
+			String[] name = products.get(i).getText().split("-"); // Beetroot - 1 Kg
+//			name[0] "Beetroot "
+//			name[1} "1 Kg"
+			String formattedString = name[0].trim();
+
+			List<String> itemNeededList = Arrays.asList(itemsNeeded);
+
+			if (itemNeededList.contains(formattedString)) {
+				j++;
+				driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
+
+				if (j == itemsNeeded.length)
+					break;
 			}
-			
+
 		}
-		
 	}
 
 }
