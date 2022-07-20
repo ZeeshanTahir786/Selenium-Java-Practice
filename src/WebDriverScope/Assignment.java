@@ -36,6 +36,8 @@ public class Assignment {
 		if(driver.switchTo().alert().getText().contains(checkBoxText)) {
 			Assert.assertTrue(true);
 			driver.switchTo().alert().accept();
+		} else {
+			Assert.assertTrue(false);
 		}
 	}
 
