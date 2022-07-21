@@ -19,16 +19,16 @@ public class AutoSuggestiveDropDown {
 		driver.findElement(By.id("autocomplete")).sendKeys("pa");
 		Thread.sleep(3000);
 		
-		driver.findElement(By.id("autocomplete")).sendKeys(Keys.ARROW_DOWN);
-		driver.findElement(By.id("autocomplete")).sendKeys(Keys.ARROW_DOWN);
-		driver.findElement(By.id("autocomplete")).sendKeys(Keys.ARROW_DOWN);
-		driver.findElement(By.id("autocomplete")).sendKeys(Keys.ENTER);
-		System.out.println(driver.findElement(By.id("autocomplete")).getAttribute("value"));
+//		for (int i = 0; i < 3; i++) {
+//			driver.findElement(By.id("autocomplete")).sendKeys(Keys.ARROW_DOWN);
+//		}
+//		driver.findElement(By.id("autocomplete")).sendKeys(Keys.ENTER);
+//		System.out.println(driver.findElement(By.id("autocomplete")).getAttribute("value"));
 		
 
-//		List<WebElement> options = driver.findElements(By.xpath("//ul[@id='ui-id-2']//li"));
-//		System.out.println(options.size());
-//
+		List<WebElement> options = driver.findElements(By.xpath("//ul[@id='ui-id-2']//li"));
+		System.out.println(options.size());
+
 //		 for(WebElement option : options) {
 //			 if(option.getText().equalsIgnoreCase("pakistan")) {
 //				 option.click();

@@ -51,7 +51,7 @@ public class DynamicDropdown {
 			Assert.assertTrue(false);
 		}
 		
-		driver.close();
+//		driver.close();
 	}
 
 }

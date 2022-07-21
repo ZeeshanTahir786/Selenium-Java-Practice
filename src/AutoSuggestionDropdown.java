@@ -10,20 +10,20 @@ public class AutoSuggestionDropdown {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "/Users/hafizzeeshan/Downloads/chromedriver");
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise");
 		driver.findElement(By.id("autosuggest")).sendKeys("pa");
 		Thread.sleep(3000);
-		
-	 List<WebElement> options =	driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
-	 
-	 for(WebElement option : options) {
-		 if(option.getText().equalsIgnoreCase("pakistan")) {
-			 option.click();
-			 break;
-		 }
-	 }
+
+		List<WebElement> options = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
+		System.out.println(options.size());
+		for (WebElement option : options) {
+			if (option.getText().equalsIgnoreCase("pakistan")) {
+				option.click();
+				break;
+			}
+		}
 	}
 
 }
