@@ -27,8 +27,8 @@ public class GettingThePriceWithPaginationSearch {
 					.collect(Collectors.toList());
 
 			price.forEach(s -> System.out.println(s));
-			
-			if(price.size() < 1) {
+
+			if (price.size() < 1) {
 				driver.findElement(By.cssSelector("a[aria-label='Next']")).click();
 			}
 		} while (price.size() < 1);
