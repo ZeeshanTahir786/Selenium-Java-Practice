@@ -20,11 +20,13 @@ public class TableSorting {
 
 		driver.findElement(By.xpath("//tr/th[1]")).click();
 
+//		CAPTURE All elements into list
 		List<WebElement> elementsList = driver.findElements(By.xpath("//tbody/tr/td[1]"));
-
+//		Capture TEXT of all elements into orignal List
 		List<String> orignalList = elementsList.stream().map(s -> s.getText()).collect(Collectors.toList());
+//		Sort on orginal lIst of step 3 -> sorted list
 		List<String> sortedList = orignalList.stream().sorted().collect(Collectors.toList());
-
+//		Compare original vs sorted list
 		Assert.assertTrue(orignalList.equals(sortedList));
 
 	}
