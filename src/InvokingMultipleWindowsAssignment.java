@@ -23,6 +23,7 @@ public class InvokingMultipleWindowsAssignment {
 		driver.get("https://rahulshettyacademy.com/angularpractice/");
 
 		driver.switchTo().newWindow(WindowType.TAB);
+//		driver.switchTo().newWindow(WindowType.WINDOW);
 
 		Set<String> win = driver.getWindowHandles();
 		Iterator<String> it = win.iterator();
