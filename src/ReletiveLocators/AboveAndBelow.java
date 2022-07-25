@@ -1,6 +1,7 @@
 package ReletiveLocators;
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,10 +16,23 @@ public class AboveAndBelow {
 
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/angularpractice/");
-		
-		WebElement nameTextBox =driver.findElement(By.cssSelector("[name='name']"));
-		
+
+		WebElement nameTextBox = driver.findElement(By.cssSelector("[name='name']"));
+
 		System.out.println(driver.findElement(with(By.tagName("label")).above(nameTextBox)).getText());
+//		==========================================================
+		WebElement doB = driver.findElement(By.cssSelector("[for='dateofBirth']"));
+		driver.findElement(with(By.tagName("input")).below(doB)).click();
+
+//		=========================================================== 
+//		Left of
+		WebElement chkText = driver.findElement(By.cssSelector("[for='exampleCheck1']"));
+		driver.findElement(with(By.tagName("input")).toLeftOf(chkText)).click();
+
+//		===========================================================
+//		Right of
+		WebElement checkBox = driver.findElement(By.id("inlineRadio1"));
+		System.out.println(driver.findElement(with(By.tagName("label")).toRightOf(checkBox)).getText());
 
 	}
 
