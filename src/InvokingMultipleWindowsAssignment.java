@@ -16,8 +16,8 @@ public class InvokingMultipleWindowsAssignment {
 	public static void main(String[] args) throws IOException {
 		/*
 		 * Invoking Multiple Windows/Tabs from Selenium using one driver Instance
-		 * Scenario : Navigate to https://rahulshettyacademy.com/angularpractice/ Fill
-		 * the "Name" field with the first course name available at
+		 * Scenario : Navigate to https://rahulshettyacademy.com/angularpractice/ 
+		 * Fill the "Name" field with the first course name available at
 		 * https://rahulshettyacademy.com
 		 */
 
@@ -45,11 +45,19 @@ public class InvokingMultipleWindowsAssignment {
 		driver.switchTo().window(parentId);
 		WebElement name = driver.findElement(By.xpath("(//input[@name='name'])[1]"));
 		name.sendKeys(courseName);
-
+		
+//		============================================
+//		taking screenshot of specific Web element
 		File src = name.getScreenshotAs(OutputType.FILE);
 
-		FileUtils.copyFile(src, new File("nameField.png"));
+//		FileUtils.copyFile(src, new File("nameField.png"));
 
+//		=================================================
+//		Get the height and width of specific web element
+		
+		System.out.println(name.getRect().getHeight());
+		System.out.println(name.getRect().getWidth());
+		
 //		driver.close();
 //		driver.quit();
 	}
